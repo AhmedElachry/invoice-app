@@ -1,0 +1,7 @@
+input.input-error,
+select.input-error {
+  border-color: red;
+}
+span.error {
+  color: red;
+}
