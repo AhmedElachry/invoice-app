@@ -561,7 +561,7 @@ function CreateInvoice({ setIsCreateInvoiceOpen, invoice, type }) {
             <div>
               <button
                 type="button"
-                onClick={() => onSaveDraft()}
+                onClick={() => onSaveDraft(values)}
                 className={`${type === "edit" ? "hidden" : ""}
                 text-white mr-1 bg-[rgb(54,59,83)]  hover:opacity-80 mx-auto py-4 items-center  justify-center  px-8 rounded-full `}
               >
