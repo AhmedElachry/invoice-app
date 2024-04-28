@@ -78,6 +78,7 @@ function CreateInvoice({ setIsCreateInvoiceOpen, invoice, type }) {
 
   // form validation schema
   const validate = (values) => {
+    // if (!isValidatorActive) return {};
     const errors = {};
 
     if (!values.senderAddress || !values.senderAddress.street) {
@@ -86,6 +87,7 @@ function CreateInvoice({ setIsCreateInvoiceOpen, invoice, type }) {
         street: "*Required",
       };
     }
+
     if (!values.senderAddress || !values.senderAddress.city) {
       errors.senderAddress = {
         ...errors.senderAddress,
@@ -202,8 +204,9 @@ function CreateInvoice({ setIsCreateInvoiceOpen, invoice, type }) {
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues,
-    onSubmit,
+    validateOnChange: false,
     validate,
+    onSubmit,
   });
 
   const onSaveDraft = (formValues) => {
